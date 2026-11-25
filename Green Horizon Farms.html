@@ -1,0 +1,869 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Green Horizon Farms</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Green Horizon Farms LLC — a Wyoming-registered agricultural company dedicated to sustainable farming, agribusiness, and land stewardship in Sheridan, Wyoming.">
+<meta name="keywords" content="Green Horizon Farms, Wyoming farming, sustainable agriculture, agribusiness, Sheridan Wyoming, farming LLC">
+<meta property="og:title" content="Green Horizon Farms LLC">
+<meta property="og:description" content="Sustainable agriculture and agribusiness rooted in Wyoming's open landscapes.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Green Horizon Farms LLC">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Green Horizon Farms LLC",
+  "description": "Wyoming-registered agricultural company focused on sustainable farming and agribusiness.",
+  "foundingDate": "2024",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "30 N Gould St Ste N",
+    "addressLocality": "Sheridan",
+    "addressRegion": "WY",
+    "postalCode": "82801",
+    "addressCountry": "US"
+  },
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DUNS",
+    "value": "133643886"
+  },
+  "areaServed": "United States",
+  "legalName": "Green Horizon Farms LLC"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap">
+
+<style>
+  /* =============================================
+     GREEN HORIZON FARMS — Design Tokens
+     Layout: Editorial vertical flow; horizon line
+     motif in gold divides each major section.
+     ============================================= */
+  :root {
+    --bg:       #F7F6F1;
+    --bg-alt:   #EDF0EA;
+    --bg-dark:  #192E20;
+    --fg:       #141E14;
+    --fg-mid:   #4D6050;
+    --fg-soft:  #7A9080;
+    --accent:   #2A6245;
+    --gold:     #B8912A;
+    --gold-lt:  #D4B060;
+    --border:   #D4DAD0;
+    --hero-sky: #C8DFC8;
+
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'Jost', system-ui, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:       #0D1A10;
+      --bg-alt:   #121F14;
+      --bg-dark:  #0A120B;
+      --fg:       #DDE8DC;
+      --fg-mid:   #9CB89E;
+      --fg-soft:  #6A8C6E;
+      --accent:   #5AAA7A;
+      --gold:     #C8A040;
+      --gold-lt:  #DFC070;
+      --border:   #2A3C2C;
+      --hero-sky: #1A3020;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:       #0D1A10;
+    --bg-alt:   #121F14;
+    --bg-dark:  #0A120B;
+    --fg:       #DDE8DC;
+    --fg-mid:   #9CB89E;
+    --fg-soft:  #6A8C6E;
+    --accent:   #5AAA7A;
+    --gold:     #C8A040;
+    --gold-lt:  #DFC070;
+    --border:   #2A3C2C;
+    --hero-sky: #1A3020;
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 0;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  /* ── Navigation ── */
+  nav {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding-block: 1rem;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto;
+    height: env(safe-area-inset-top, 0px);
+    z-index: 101;
+    background: var(--bg);
+  }
+
+  .nav-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-inline: 0;
+  }
+
+  .nav-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    text-decoration: none;
+  }
+
+  .nav-logo-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--fg);
+    line-height: 1.1;
+  }
+
+  .nav-logo-tag {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--fg-mid);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a:focus { color: var(--accent); }
+
+  /* ── Gold horizon divider motif ── */
+  .horizon-line {
+    display: block;
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin-block: 1.5rem;
+  }
+  .horizon-line.center { margin-inline: auto; }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(
+      170deg,
+      var(--hero-sky) 0%,
+      var(--bg-alt) 55%,
+      var(--bg) 100%
+    );
+    padding-block: 5rem 4rem;
+    margin-top: calc(-1 * env(safe-area-inset-top, 0px));
+    padding-top: calc(env(safe-area-inset-top, 0px) + 5rem);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero::after {
+    content: "GHF";
+    position: absolute;
+    right: -2%;
+    bottom: -8%;
+    font-family: var(--font-display);
+    font-size: clamp(14rem, 30vw, 26rem);
+    font-weight: 600;
+    color: var(--accent);
+    opacity: 0.04;
+    pointer-events: none;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .hero-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-inline: 0;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-heading {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 600;
+    line-height: 1.0;
+    color: var(--fg);
+    max-width: 14ch;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    font-weight: 300;
+    color: var(--fg-mid);
+    max-width: 46ch;
+    margin-top: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.75rem 1.75rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--fg); transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--fg-mid);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--accent); border-color: var(--gold); }
+
+  /* ── Section shells ── */
+  section { padding-block: 5rem; }
+
+  .section-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-inline: 0;
+  }
+
+  /* ── About ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .about-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--fg);
+    text-wrap: balance;
+  }
+
+  .about-heading em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .about-body {
+    color: var(--fg-mid);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .about-body p + p { margin-top: 1rem; }
+
+  .about-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .fact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .fact-num {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 4rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .fact-desc {
+    font-size: 0.85rem;
+    color: var(--fg-mid);
+    padding-top: 0.4rem;
+    line-height: 1.5;
+  }
+
+  .fact-desc strong {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--fg);
+    margin-bottom: 0.15rem;
+  }
+
+  /* ── Services ── */
+  .services { background: var(--bg-alt); }
+
+  .services-heading-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 500;
+    color: var(--fg);
+    text-wrap: balance;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 2px solid var(--gold);
+  }
+
+  .service-card {
+    padding: 2rem 2rem 2rem 0;
+    border-right: 1px solid var(--border);
+  }
+  .service-card:last-child { border-right: none; }
+  .service-card:nth-child(n+2) { padding-left: 2rem; }
+
+  .service-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+
+  .service-icon svg { width: 100%; height: 100%; }
+
+  .service-name {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--fg);
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+  }
+
+  .service-desc {
+    font-size: 0.9rem;
+    color: var(--fg-mid);
+    line-height: 1.7;
+  }
+
+  /* ── Wyoming strip ── */
+  .wyoming-strip {
+    background: var(--bg-dark);
+    padding-block: 4rem;
+  }
+
+  .wyoming-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-inline: 0;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .wy-text { flex: 1; min-width: 260px; }
+
+  .wy-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .wy-heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 500;
+    color: #E8F0E8;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  .wy-body {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: rgba(200, 220, 200, 0.65);
+    line-height: 1.75;
+    max-width: 46ch;
+  }
+
+  .wy-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .wy-stat-num {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--gold-lt);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .wy-stat-label {
+    font-size: 0.8rem;
+    color: rgba(200, 220, 200, 0.5);
+    letter-spacing: 0.08em;
+    margin-top: 0.25rem;
+  }
+
+  /* ── Contact ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .contact-heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--fg);
+    text-wrap: balance;
+  }
+
+  .contact-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-row:last-child { border-bottom: none; }
+
+  .contact-row-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .contact-row-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--fg-soft);
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-row-value {
+    font-size: 0.95rem;
+    color: var(--fg);
+    line-height: 1.5;
+  }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--bg-dark);
+    padding-block: 2.5rem;
+    border-top: 2px solid var(--gold);
+  }
+
+  .footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-inline: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(220, 235, 220, 0.9);
+  }
+
+  .footer-duns {
+    font-size: 0.75rem;
+    color: rgba(200, 220, 200, 0.4);
+    margin-top: 0.25rem;
+    letter-spacing: 0.06em;
+  }
+
+  .footer-legal {
+    font-size: 0.75rem;
+    color: rgba(200, 220, 200, 0.35);
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 800px) {
+    .about-grid,
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+    .services-grid { grid-template-columns: 1fr; }
+
+    .service-card {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .service-card:nth-child(n+2) { padding-left: 0; }
+    .service-card:last-child { border-bottom: none; }
+
+    .nav-links { display: none; }
+
+    .wy-stats { flex-direction: row; flex-wrap: wrap; gap: 2rem; }
+  }
+
+  @media (max-width: 540px) {
+    .hero { padding-block: 3.5rem 3rem; }
+    section { padding-block: 3.5rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="Green Horizon Farms LLC">
+      <span class="nav-logo-name">Green Horizon Farms</span>
+      <span class="nav-logo-tag">Wyoming LLC · Est. 2024</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" aria-label="Introduction">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Sheridan, Wyoming · United States</p>
+    <h1 class="hero-heading">Where the land<br><em>meets opportunity</em></h1>
+    <p class="hero-sub">
+      Green Horizon Farms LLC is a Wyoming-based agricultural company committed to sustainable land use, responsible farming practices, and long-term value creation in America's heartland.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Get in touch</a>
+      <a href="#about" class="btn-ghost">Learn about us &darr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" aria-label="About Green Horizon Farms">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <p class="about-label">About the Company</p>
+        <span class="horizon-line"></span>
+        <h2 class="about-heading">Rooted in <em>Wyoming,</em> reaching toward the horizon</h2>
+        <span class="horizon-line"></span>
+        <div class="about-body">
+          <p>
+            Green Horizon Farms LLC was founded in 2024 and registered with the State of Wyoming — a state known for its open land, favorable business environment, and deep agricultural heritage.
+          </p>
+          <p>
+            Our mission is to develop sustainable, forward-thinking agricultural operations that respect the land while building lasting economic value. We are positioned to serve domestic and international markets with integrity and expertise.
+          </p>
+          <p>
+            Headquartered in Sheridan, Wyoming, we operate at the intersection of traditional farming values and modern agribusiness innovation.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="about-facts">
+          <div class="fact-item">
+            <span class="fact-num">2024</span>
+            <div class="fact-desc">
+              <strong>Year Founded</strong>
+              Incorporated July 30, 2024, certified by the Wyoming Secretary of State.
+            </div>
+          </div>
+          <div class="fact-item">
+            <span class="fact-num">WY</span>
+            <div class="fact-desc">
+              <strong>State of Registration</strong>
+              A Wyoming LLC — benefiting from one of the most business-friendly legal frameworks in the United States.
+            </div>
+          </div>
+          <div class="fact-item">
+            <span class="fact-num">US</span>
+            <div class="fact-desc">
+              <strong>DUNS Number: 133643886</strong>
+              Registered with Dun &amp; Bradstreet, establishing our credibility with government agencies and partners.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="services" aria-label="Our Services">
+  <div class="section-inner">
+    <div class="services-heading-row">
+      <div>
+        <p class="about-label">What We Do</p>
+        <h2 class="section-title">Agricultural solutions<br>for a sustainable future</h2>
+      </div>
+    </div>
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="21" cy="21" r="20" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M21 32V14M21 14C21 14 15 17 14 23M21 14C21 14 27 17 28 23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 32H30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="service-name">Sustainable Crop Farming</h3>
+        <p class="service-desc">We manage agricultural land using responsible, yield-optimized practices that preserve soil health, water quality, and long-term productivity for future generations.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="12" width="38" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M2 20H40M14 12V36M28 12V36" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M11 7H31L36 12H6L11 7Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="service-name">Agribusiness Consulting</h3>
+        <p class="service-desc">Strategic advisory for agricultural enterprises — from operational planning and supply chain optimization to regulatory compliance and market positioning across domestic and international channels.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 36L12 24L18 29L26 16L36 36H6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="30" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M34 10H40M26 10H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="service-name">Land &amp; Resource Management</h3>
+        <p class="service-desc">Expert management of agricultural land assets, including soil analysis, irrigation planning, pasture development, and resource stewardship in Wyoming's diverse landscape.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Wyoming Strip -->
+<section class="wyoming-strip" aria-label="Why Wyoming">
+  <div class="wyoming-inner">
+    <div class="wy-text">
+      <p class="wy-label">Our Foundation</p>
+      <h2 class="wy-heading">The Wyoming advantage</h2>
+      <p class="wy-body">
+        Wyoming offers one of North America's most favorable environments for agricultural business — no state income tax, strong property rights, minimal regulatory burden, and 97% of its land in agricultural use. We chose Wyoming because it aligns with our values: open, honest, and built for the long run.
+      </p>
+    </div>
+    <div class="wy-stats">
+      <div>
+        <div class="wy-stat-num">97%</div>
+        <div class="wy-stat-label">of Wyoming land in agricultural use</div>
+      </div>
+      <div>
+        <div class="wy-stat-num">0%</div>
+        <div class="wy-stat-label">Wyoming state income tax</div>
+      </div>
+      <div>
+        <div class="wy-stat-num">#1</div>
+        <div class="wy-stat-label">ranked for business-friendly LLC laws</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" aria-label="Contact Information">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <p class="about-label">Get in Touch</p>
+        <span class="horizon-line"></span>
+        <h2 class="contact-heading">Let's build something<br><em>that lasts</em></h2>
+        <span class="horizon-line"></span>
+        <p style="color: var(--fg-mid); font-size: 0.95rem; line-height: 1.75; max-width: 42ch;">
+          Whether you're a partner, supplier, investor, or simply curious about what we're building at Green Horizon Farms — we'd love to hear from you. Reach out and let's start a conversation.
+        </p>
+      </div>
+      <div class="contact-info">
+        <div class="contact-row">
+          <svg class="contact-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s-8-5-8-11a8 8 0 1 1 16 0c0 6-8 11-8 11z"/>
+            <circle cx="12" cy="11" r="3"/>
+          </svg>
+          <div>
+            <p class="contact-row-label">Registered Address</p>
+            <p class="contact-row-value">
+              30 N Gould St, Suite N<br>
+              Sheridan, Wyoming 82801<br>
+              United States
+            </p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <svg class="contact-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="2 4 12 13 22 4"/>
+          </svg>
+          <div>
+            <p class="contact-row-label">Email</p>
+            <p class="contact-row-value">info@greenhorizonfarms.com</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <svg class="contact-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M3 9h18M9 21V9"/>
+          </svg>
+          <div>
+            <p class="contact-row-label">Legal</p>
+            <p class="contact-row-value">
+              Green Horizon Farms LLC<br>
+              State of Wyoming · DUNS 133643886
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Green Horizon Farms LLC</div>
+      <div class="footer-duns">DUNS: 133643886 &nbsp;·&nbsp; Sheridan, Wyoming, USA</div>
+    </div>
+    <div class="footer-legal">
+      &copy; 2024 Green Horizon Farms LLC. All rights reserved.<br>
+      Registered with the State of Wyoming · Established July 30, 2024
+    </div>
+  </div>
+</footer>
+
+</body></html>
